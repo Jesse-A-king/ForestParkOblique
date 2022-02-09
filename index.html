@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        <style>
+        #map {
+            width: 1070px;
+            height: 540px;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="data/ForrestParkParkTrails_4.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[45.57159048624447,-122.75083062410778],[45.62221524986598,-122.61302945655227]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'feet',
+            secondaryLengthUnit: 'miles',
+            primaryAreaUnit: 'sqfeet',
+            secondaryAreaUnit: 'sqmiles'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_POtry05copycopy_0');
+        map.getPane('pane_POtry05copycopy_0').style.zIndex = 400;
+        var img_POtry05copycopy_0 = 'data/POtry05copycopy_0.png';
+        var img_bounds_POtry05copycopy_0 = [[45.564563491355,-122.84241565972607],[45.62685878561326,-122.57764446036657]];
+        var layer_POtry05copycopy_0 = new L.imageOverlay(img_POtry05copycopy_0,
+                                              img_bounds_POtry05copycopy_0,
+                                              {pane: 'pane_POtry05copycopy_0'});
+        bounds_group.addLayer(layer_POtry05copycopy_0);
+        map.addLayer(layer_POtry05copycopy_0);
+        map.createPane('pane_POtry05copy_1');
+        map.getPane('pane_POtry05copy_1').style.zIndex = 401;
+        var img_POtry05copy_1 = 'data/POtry05copy_1.png';
+        var img_bounds_POtry05copy_1 = [[45.564563491355,-122.84241565972607],[45.62685878561326,-122.57764446036657]];
+        var layer_POtry05copy_1 = new L.imageOverlay(img_POtry05copy_1,
+                                              img_bounds_POtry05copy_1,
+                                              {pane: 'pane_POtry05copy_1'});
+        bounds_group.addLayer(layer_POtry05copy_1);
+        map.addLayer(layer_POtry05copy_1);
+        map.createPane('pane_POtry05_2');
+        map.getPane('pane_POtry05_2').style.zIndex = 402;
+        var img_POtry05_2 = 'data/POtry05_2.png';
+        var img_bounds_POtry05_2 = [[45.564563491355,-122.84241565972607],[45.62685878561326,-122.57764446036657]];
+        var layer_POtry05_2 = new L.imageOverlay(img_POtry05_2,
+                                              img_bounds_POtry05_2,
+                                              {pane: 'pane_POtry05_2'});
+        bounds_group.addLayer(layer_POtry05_2);
+        map.addLayer(layer_POtry05_2);
+        map.createPane('pane_POtry05copycopycopy_3');
+        map.getPane('pane_POtry05copycopycopy_3').style.zIndex = 403;
+        var img_POtry05copycopycopy_3 = 'data/POtry05copycopycopy_3.png';
+        var img_bounds_POtry05copycopycopy_3 = [[45.564563491355,-122.84241565972607],[45.62685878561326,-122.57764446036657]];
+        var layer_POtry05copycopycopy_3 = new L.imageOverlay(img_POtry05copycopycopy_3,
+                                              img_bounds_POtry05copycopycopy_3,
+                                              {pane: 'pane_POtry05copycopycopy_3'});
+        bounds_group.addLayer(layer_POtry05copycopycopy_3);
+        map.addLayer(layer_POtry05copycopycopy_3);
+        function pop_ForrestParkParkTrails_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>TrailName</strong><br />' + (feature.properties['TrailName'] !== null ? autolinker.link(feature.properties['TrailName'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Length'] !== null ? autolinker.link(feature.properties['Shape_Length'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? autolinker.link(feature.properties['Shape_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ForrestParkParkTrails_4_0(feature) {
+            switch(String(feature.properties['TrailName'])) {
+                case 'Lief Erikson Drive':
+                    return {
+                pane: 'pane_ForrestParkParkTrails_4',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,116,23,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Wildwood Trail':
+                    return {
+                pane: 'pane_ForrestParkParkTrails_4',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(203,122,240,1.0)',
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_ForrestParkParkTrails_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(226,100,62,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_ForrestParkParkTrails_4');
+        map.getPane('pane_ForrestParkParkTrails_4').style.zIndex = 404;
+        map.getPane('pane_ForrestParkParkTrails_4').style['mix-blend-mode'] = 'normal';
+        var layer_ForrestParkParkTrails_4 = new L.geoJson(json_ForrestParkParkTrails_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ForrestParkParkTrails_4',
+            layerName: 'layer_ForrestParkParkTrails_4',
+            pane: 'pane_ForrestParkParkTrails_4',
+            onEachFeature: pop_ForrestParkParkTrails_4,
+            style: style_ForrestParkParkTrails_4_0,
+        });
+        bounds_group.addLayer(layer_ForrestParkParkTrails_4);
+        map.addLayer(layer_ForrestParkParkTrails_4);
+        setBounds();
+        L.ImageOverlay.include({
+            getBounds: function () {
+                return this._bounds;
+            }
+        });
+        </script>
+    </body>
+</html>
